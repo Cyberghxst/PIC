@@ -19,6 +19,7 @@ en la pantalla LCD 16x2.
 #fuses xt, nowdt, nolvp, noprotect, nobrownout, put
 #use delay(clock=4M)
 
+// Define LCD pins.
 #define LCD_RS_PIN      PIN_B0
 #define LCD_RW_PIN      PIN_B1
 #define LCD_ENABLE_PIN  PIN_B2
@@ -30,9 +31,9 @@ en la pantalla LCD 16x2.
 #include "LCD.c" // Librería incluída en PIC C / CCS C
 
 void main() {
+   // Init the LCD.
+   lcd_init();
    for (;;) {
-      // Init the LCD.
-      lcd_init();
    
       // Go to the row 1, column 1.
       lcd_gotoxy(1, 1);
