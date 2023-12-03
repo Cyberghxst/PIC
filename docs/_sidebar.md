@@ -9,3 +9,4 @@
 - - [Parpadeo de un LED](led-blink.md)
 - - [LED con botón](led-button.md)
 - - [Manejo de un LCD 16x2](lcd-handling.md)
+- - [Contador con LCD 16x2](lcd-counting.md)
