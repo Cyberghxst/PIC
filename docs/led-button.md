@@ -1,20 +1,15 @@
-# LED con botón.
-Configurando el PIC debidamente y usando LEDs, encender y apagar
-un led a través de un botón.
+# LED Diode Control With Button
 
-## Materiales
-- 1 Diodos LED de cualquier color.
-- 1 resistencias de 270.
-- 1 PIC16F877A (para este caso)
-- 1 resistencia de 10K.
-- 1 cristal de cuarzo de 4 MHz.
-- 2 capacitores cerámicos de 22pF.
-- 2 push button normalmente abierto.
+## Materials
+- LED diodes (x1)
+- 270 ohm resistors (x1)
+- 10K ohm resistor (x1)
+- NO Push Button (x2)
 
-## Esquemático
+## Diagram
 ![Schamatic](/assets/led_button_schematic.png)
 
-## Código en C
+## C code
 ```c
 #include <16F877A.h>
 #fuses xt, nowdt, nolvp, noprotect, nobrownout, put
@@ -23,9 +18,9 @@ un led a través de un botón.
 #use standard_io(B)
 #use fast_io(D)
 
-// Define LED pin.
+// Defines LED pin.
 #define LED    PIN_B0
-// Define PUSH pin.
+// Defines PUSH pin.
 #define PUSH   PIN_D0
 
 void main() {
@@ -41,7 +36,7 @@ void main() {
    // Infinite loop.
    for (;;) {
       if (input(PUSH) == 1) {
-         delay_ms(200); // Anti-rebote.
+         delay_ms(200); // Debouncing.
          output_high(LED);
       } else {
          output_low(LED);

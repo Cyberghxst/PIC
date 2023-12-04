@@ -1,25 +1,22 @@
-# Manejo de LCD 16x2
-Configurando el PIC debidamente y usando LEDs, imprimir un mensaje
-en la pantalla LCD 16x2.
+# LCD 16x2 handling
 
-## Materiales
-- 1 PIC16F877A (para este caso)
-- 1 resistencia de 10K.
-- 1 cristal de cuarzo de 4 MHz.
-- 2 capacitores cerámicos de 22pF.
-- 1 push button normalmente abierto.
-- 1 LCD 16x2
+## Materials
+- LED diodes (x7)
+- 270 ohm resistors (x7)
+- 10K ohm resistor (x1)
+- NO Push Button (x1)
+- LCD 16x2 (x1)
 
-## Esquemático
+## Diagram
 ![Schamatic](/assets/lcd_schematic.png)
 
-## Código en C
+## C code
 ```c
 #include <16F877A.h>
 #fuses xt, nowdt, nolvp, noprotect, nobrownout, put
 #use delay(clock=4M)
 
-// Define LCD pins.
+// Defines LCD pins.
 #define LCD_RS_PIN      PIN_B0
 #define LCD_RW_PIN      PIN_B1
 #define LCD_ENABLE_PIN  PIN_B2
@@ -28,7 +25,7 @@ en la pantalla LCD 16x2.
 #define LCD_DATA6       PIN_B6
 #define LCD_DATA7       PIN_B7
 
-#include "LCD.c" // Librería incluída en PIC C / CCS C
+#include "LCD.c" // Library included in PIC C / CCS C standard libraries.
 
 void main() {
    // Init the LCD.
@@ -39,7 +36,7 @@ void main() {
       lcd_gotoxy(1, 1);
    
       // Print a message in the last location.
-      lcd_putc("HOLA MUNDO");
+      lcd_putc("HI WORLD");
    
       // Go to the row 1, column 2.
       lcd_gotoxy(1, 2);

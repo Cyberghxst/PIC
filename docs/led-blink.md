@@ -1,20 +1,15 @@
-# Parpadeo de un LED.
-Configurando el PIC debidamente y usando LEDs, encender y apagar
-un led de manera infinita.
+# LED Blinking
 
-## Materiales
-- 1 Diodos LED de cualquier color.
-- 1 resistencias de 270.
-- 1 PIC16F877A (para este caso)
-- 1 resistencia de 10K.
-- 1 cristal de cuarzo de 4 MHz.
-- 2 capacitores cerámicos de 22pF.
-- 1 push button normalmente abierto.
+## Materials
+- LED diodes (x1)
+- 270 ohm resistors (x1)
+- 10K ohm resistor (x1)
+- NO Push Button (x1)
 
-## Esquemático
+## Diagram
 ![Schamatic](/assets/led_blink_schematic.png)
 
-## Código en C
+## C code
 ```c
 #include <16F877A.h>
 #fuses xt, nowdt, nolvp, noprotect, nobrownout, put

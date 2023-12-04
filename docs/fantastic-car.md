@@ -1,20 +1,15 @@
-# Auto Fantástico
-Configurando el PIC debidamente y usando LEDs, recrear el efecto del
-auto fantástico.
+# Fantastic Car
 
-## Materiales
-- 7 Diodos LED de cualquier color.
-- 7 resistencias de 270.
-- 1 PIC16F877A (para este caso)
-- 1 resistencia de 10K.
-- 1 cristal de cuarzo de 4 MHz.
-- 2 capacitores cerámicos de 22pF.
-- 1 push button normalmente abierto.
+## Materials
+- LED diodes (x7)
+- 270 ohm resistors (x7)
+- 10K ohm resistor (x1)
+- NO Push Button (x1)
 
-## Esquemático
+## Diagram
 ![Schamatic](/assets/fantastic_car_schematic.png)
 
-## Código en C
+## C code
 ```c
 #include <16F877A.h>
 #fuses xt, nowdt, nolvp, noprotect, nobrownout, put

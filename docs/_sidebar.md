@@ -2,11 +2,10 @@
 
 - **Index**
 - - [Home](/)
-- - [Guide](guide.md)
 
 - **Projects**
-- - [Auto Fantástico](fantastic-car.md)
-- - [Parpadeo de un LED](led-blink.md)
-- - [LED con botón](led-button.md)
-- - [Manejo de un LCD 16x2](lcd-handling.md)
-- - [Contador con LCD 16x2](lcd-counting.md)
+- - [Fantastic Car](fantastic-car.md)
+- - [LED blinking](led-blink.md)
+- - [LED Diode Control With Button](led-button.md)
+- - [LCD 16x2 Handling](lcd-handling.md)
+- - [Counting With LCD 16x2](lcd-counting.md)

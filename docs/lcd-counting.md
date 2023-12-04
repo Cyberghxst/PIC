@@ -1,25 +1,22 @@
-# Contador con LCD 16x2
-Configurando el PIC debidamente y usando LEDs, contar y mostrar el número
-en la pantalla LCD 16x2.
+# Counting With LCD 16x2
 
-## Materiales
-- 1 PIC16F877A (para este caso)
-- 1 resistencia de 10K.
-- 1 cristal de cuarzo de 4 MHz.
-- 2 capacitores cerámicos de 22pF.
-- 2 push button normalmente abierto.
-- 1 LCD 16x2
+## Materials
+- LED diodes (x7)
+- 270 ohm resistors (x7)
+- 10K ohm resistor (x1)
+- NO Push Button (x1)
+- LCD 16x2 (x1)
 
-## Esquemático
+## Diagram
 ![Schamatic](/assets/lcd_count_schematic.png)
 
-## Código en C
+## C code
 ```c
 #include <16F877A.h>
 #fuses xt, nowdt, nolvp, noprotect, nobrownout, put
 #use delay(clock=4M)
 
-// Defining LCD pins.
+// Defines LCD pins.
 #define LCD_RS_PIN      PIN_B0
 #define LCD_RW_PIN      PIN_B1
 #define LCD_ENABLE_PIN  PIN_B2
@@ -28,7 +25,7 @@ en la pantalla LCD 16x2.
 #define LCD_DATA6       PIN_B6
 #define LCD_DATA7       PIN_B7
 
-// Defining push pin.
+// Defines push pin.
 #define PUSH            PIN_D0
 
 #include "LCD.c"
@@ -49,7 +46,7 @@ void main() {
    // Infinite loop.
    for (;;) {
       if (input(PUSH) == 1) {
-         delay_ms(200); // Anti-rebote.
+         delay_ms(200); // Debouncing.
          i++;
          if (i > 127) {
             i = 0;
